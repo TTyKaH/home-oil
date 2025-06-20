@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 // layouts
 import DefaultLayout from '@/layouts/default.vue'
-
 // views
 import Home from '@/views/index.vue'
 
@@ -18,7 +17,7 @@ const router = createRouter({
           name: 'home',
           component: Home,
         },
-      ]
+      ],
     },
   ],
 })
