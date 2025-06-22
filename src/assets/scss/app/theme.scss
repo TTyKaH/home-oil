@@ -1,0 +1,14 @@
+* {
+  .theme-light {
+    --bg-main: #ffffff;
+    --text-color-main: #4a4a4a;
+    --text-color-sub: #a0aec0;
+  }
+
+  .theme-dark {
+    --bg-main: #ffffff;
+    --text-color: #4a4a4a;
+  }
+
+  color: var(--text-color);
+}

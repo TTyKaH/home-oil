@@ -1,7 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <RouterView />
+  <div class="theme-light wrap-x wrap-b">
+    <RouterView />
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+#app {
+  background-color: var(--bg-main);
+}
+</style>
