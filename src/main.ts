@@ -1,5 +1,3 @@
-import './assets/scss/main.scss'
-
 import naive from 'naive-ui'
 import { createPinia } from 'pinia'
 import { createApp } from 'vue'

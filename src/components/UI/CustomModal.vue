@@ -33,7 +33,7 @@ import { CloseFilled } from '@vicons/material'
 
 const emit = defineEmits(['close'])
 
-const props = defineProps({
+defineProps({
   isShow: {
     type: Boolean,
     default: false,
@@ -59,31 +59,31 @@ const close = () => emit('close')
   &__header {
     font-weight: 700;
     font-size: 24px;
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   :deep(.custom-modal__header) {
     font-weight: 700;
     font-size: 24px;
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   &__body {
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   :deep(.custom-modal__body) {
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   &__footer {
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   :deep(.custom-modal__footer) {
-    padding: 10px 20px;
+    padding: 15px 20px;
   }
 
   &__close {

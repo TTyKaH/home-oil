@@ -1,13 +1,17 @@
-<script setup lang="ts"></script>
-
 <template>
-  <div class="theme-light wrap-x wrap-b">
+  <div class="wrap-x wrap-b">
     <RouterView />
   </div>
 </template>
 
-<style scoped lang="scss">
-#app {
-  background-color: var(--bg-main);
-}
+<script setup lang="ts">
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  document.body.classList.add('theme-light')
+})
+</script>
+
+<style lang="scss">
+@use '@/assets/scss/main.scss';
 </style>

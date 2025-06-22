@@ -20,7 +20,7 @@
 
         <NButton class="oil-card__open" quaternary circle @click="setActiveOil(oil)">
           <template #icon>
-            <NIcon color="var(--text-color-sub)" size="28" :component="VisibilityFilled" />
+            <NIcon color="var(--text-color-sub)" size="28" :component="VisibilityOutlined" />
           </template>
         </NButton>
       </div>
@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { VisibilityFilled } from '@vicons/material'
+import { VisibilityOutlined } from '@vicons/material'
 
 import UseOilList from '@/composables/UseOilList.ts'
 
@@ -77,6 +77,7 @@ const { setActiveOil } = UseOilList()
   &__name {
     font-weight: 700;
     font-size: 24px;
+    color: var(--text-color-main);
   }
 
   &__type {

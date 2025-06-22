@@ -1,14 +1,14 @@
-* {
-  .theme-light {
-    --bg-main: #ffffff;
-    --text-color-main: #4a4a4a;
-    --text-color-sub: #a0aec0;
-  }
+.theme-light {
+  --bg-main: #fff;
+  --text-color-main: #4a4a4a;
+  --text-color-sub: #a0aec0;
+}
 
-  .theme-dark {
-    --bg-main: #ffffff;
-    --text-color: #4a4a4a;
-  }
+.theme-dark {
+}
 
-  color: var(--text-color);
+body {
+  color: var(--text-color-main) !important;
+  font-size: 16px;
+  background-color: var(--bg-main);
 }
