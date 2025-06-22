@@ -1,6 +1,11 @@
 <template>
   <div class="oil-list">
-    <OilCard v-for="(oil, idx) in list" :key="idx" :oil="oil" />
+    <div class="oil-list__title text-2xl font-semibold pb-7">
+      Давим масло под индивидуальный заказ
+    </div>
+    <div class="oil-list__cards">
+      <OilCard v-for="(oil, idx) in list" :key="idx" :oil="oil" />
+    </div>
   </div>
 </template>
 
@@ -17,7 +22,13 @@ defineProps({
 
 <style scoped lang="scss">
 .oil-list {
-  @apply grid;
-  gap: 20px;
+  &__title {
+    @apply text-center;
+  }
+
+  &__cards {
+    @apply grid;
+    gap: 20px;
+  }
 }
 </style>

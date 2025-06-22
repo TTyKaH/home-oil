@@ -8,20 +8,46 @@
     </NButton>
 
     <div class="header__logo">
-      <NIcon size="18" :component="WaterDropFilled" />
+      <NIcon size="18" color="var(--oil)" :component="WaterDropFilled" />
       Домашнее масло
     </div>
 
-    <NButton class="header__menu" quaternary circle>
-      <template #icon>
-        <NIcon size="28" :component="DehazeFilled" />
-      </template>
-    </NButton>
+    <NDropdown
+      class="header__menu"
+      trigger="click"
+      :options="menu"
+      size="huge"
+      @select="handleSelect"
+    >
+      <NButton quaternary circle>
+        <template #icon>
+          <NIcon size="28" :component="DehazeFilled" />
+        </template>
+      </NButton>
+    </NDropdown>
   </div>
 </template>
 
 <script setup lang="ts">
 import { DarkModeFilled, DehazeFilled, LightModeFilled, WaterDropFilled } from '@vicons/material'
+import { useRouter } from 'vue-router'
+
+const menu = [
+  {
+    label: 'Масла',
+    key: 'oil-list',
+  },
+  {
+    label: 'Контактные данные',
+    key: 'contacts',
+  },
+]
+
+const router = useRouter()
+
+const handleSelect = (routeName: string) => {
+  router.push({ name: routeName })
+}
 </script>
 
 <style scoped lang="scss">
