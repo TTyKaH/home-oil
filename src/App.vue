@@ -5,11 +5,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import UseTheme from '@/composables/UseTheme'
 
-onMounted(() => {
-  document.body.classList.add('theme-light')
-})
+UseTheme()
 </script>
 
 <style lang="scss">

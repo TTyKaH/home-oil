@@ -2,8 +2,20 @@
   <div class="header wrap-x">
     <NButton class="header__theme" quaternary circle>
       <template #icon>
-        <NIcon size="28" :component="LightModeFilled" />
-        <!-- <NIcon size="28" :component="DarkModeFilled" /> -->
+        <NIcon
+          v-if="themeName === 'light'"
+          size="28"
+          :component="LightModeFilled"
+          color="var(--text-color-main)"
+          @click="setTheme('dark')"
+        />
+        <NIcon
+          v-else
+          size="28"
+          :component="DarkModeFilled"
+          color="var(--text-color-main)"
+          @click="setTheme('light')"
+        />
       </template>
     </NButton>
 
@@ -21,7 +33,7 @@
     >
       <NButton quaternary circle>
         <template #icon>
-          <NIcon size="28" :component="DehazeFilled" />
+          <NIcon size="28" :component="DehazeFilled" color="var(--text-color-main)" />
         </template>
       </NButton>
     </NDropdown>
@@ -31,6 +43,10 @@
 <script setup lang="ts">
 import { DarkModeFilled, DehazeFilled, LightModeFilled, WaterDropFilled } from '@vicons/material'
 import { useRouter } from 'vue-router'
+
+import UseTheme from '@/composables/UseTheme'
+
+const { themeName, setTheme } = UseTheme()
 
 const menu = [
   {
@@ -62,12 +78,12 @@ const handleSelect = (routeName: string) => {
 
   background: linear-gradient(
     to top,
-    rgba(255, 255, 255, 0.5),
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255)
+    rgba(var(--bg-main-rgb), 0.5),
+    rgba(var(--bg-main-rgb), 0.7),
+    rgba(var(--bg-main-rgb), 0.8),
+    rgba(var(--bg-main-rgb), 0.9),
+    rgba(var(--bg-main-rgb), 0.9),
+    rgba(var(--bg-main-rgb), 1)
   );
   backdrop-filter: blur(7px);
 

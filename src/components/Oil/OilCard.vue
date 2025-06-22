@@ -1,5 +1,5 @@
 <template>
-  <NCard class="oil-card">
+  <NCard class="oil-card shadow">
     <template #cover>
       <div
         class="oil-card__img"
@@ -46,13 +46,6 @@ const { setActiveOil } = UseOilList()
 <style scoped lang="scss">
 .oil-card {
   border-radius: 20px;
-
-  box-shadow:
-    0px 1px 1px rgba(3, 7, 18, 0.01),
-    0px 3px 4px rgba(3, 7, 18, 0.02),
-    0px 7px 9px rgba(3, 7, 18, 0.03),
-    0px 13px 15px rgba(3, 7, 18, 0.04),
-    0px 20px 24px rgba(3, 7, 18, 0.05);
 
   &__img {
     @apply w-full bg-cover;

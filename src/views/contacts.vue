@@ -12,7 +12,7 @@
       >
         <NButton quaternary circle>
           <template #icon>
-            <NIcon size="28" :component="contact.icon" />
+            <NIcon size="28" :component="contact.icon" color="var(--text-color-main)" />
           </template>
         </NButton>
         {{ contact.title }}
