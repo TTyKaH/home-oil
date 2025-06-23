@@ -3,6 +3,16 @@ import { onMounted, type Ref, ref, watch } from 'vue'
 const UseTheme = () => {
   const themeName: Ref<string> = ref('light')
 
+  const updateThemeColor = (color: string) => {
+    let themeColorMeta = document.querySelector('meta[name="theme-color"]')
+    if (!themeColorMeta) {
+      themeColorMeta = document.createElement('meta')
+      themeColorMeta.setAttribute('name', 'theme-color')
+      document.head.appendChild(themeColorMeta)
+    }
+    themeColorMeta.setAttribute('content', color.trim())
+  }
+
   watch(
     () => themeName.value,
     () => {
@@ -13,6 +23,9 @@ const UseTheme = () => {
         document.body.classList.add('theme-dark')
         document.body.classList.remove('theme-light')
       }
+
+      const computedBgMain = getComputedStyle(document.body).getPropertyValue('--bg-main')
+      updateThemeColor(computedBgMain)
     },
     {
       immediate: true,
