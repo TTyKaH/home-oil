@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-import ContactsList from '@/components/ContactsIcon.vue'
+import ContactsList from '@/components/ContactsList.vue'
 </script>

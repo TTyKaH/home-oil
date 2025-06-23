@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import ContactsList from '@/components/ContactsIcon.vue'
+import ContactsList from '@/components/ContactsList.vue'
 import OilCard from '@/components/Oil/OilCard.vue'
 
 defineProps({
@@ -30,12 +30,6 @@ defineProps({
 
   &__cards {
     @apply grid;
-  }
-
-  :deep(.contacts) {
-    a {
-      @apply flex justify-center;
-    }
   }
 }
 </style>

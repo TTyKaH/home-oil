@@ -32,23 +32,29 @@
         </div>
       </div>
 
-      <div class="oil-modal-content__description">
-        <div class="oil-modal-content__title">
-          <NIcon color="var(--text-color-sub)" size="28" :component="WarningAmberOutlined" />
-          Противопоказания
-        </div>
-        <div class="oil-modal-content__list grid gap-2">
-          <div
-            v-for="(contraindication, idx) in oilBuffer.modalContent.contraindications"
-            :key="idx"
-            class="oil-modal-content__item flex gap-1"
-          >
-            -
-            <div>
-              {{ contraindication }}
+      <div>
+        <div class="oil-modal-content__description">
+          <div class="oil-modal-content__title">
+            <NIcon color="var(--text-color-sub)" size="28" :component="WarningAmberOutlined" />
+            Противопоказания
+          </div>
+          <div class="oil-modal-content__list grid gap-2">
+            <div
+              v-for="(contraindication, idx) in oilBuffer.modalContent.contraindications"
+              :key="idx"
+              class="oil-modal-content__item flex gap-1"
+            >
+              -
+              <div>
+                {{ contraindication }}
+              </div>
             </div>
           </div>
         </div>
+
+        <NDivider />
+
+        <ContactsList />
       </div>
     </div>
   </div>
@@ -57,6 +63,8 @@
 <script setup lang="ts">
 import { DescriptionOutlined, ThumbUpOutlined, WarningAmberOutlined } from '@vicons/material'
 import { ref, watch } from 'vue'
+
+import ContactsList from '@/components/ContactsList.vue'
 
 const props = defineProps({
   oil: {
