@@ -7,6 +7,7 @@
   --shadow-rgb: 3, 7, 18;
   --text-color-main: #4a4a4a;
   --text-color-sub: #a0aec0;
+  --hover: #f3f3f5;
   --oil: #f7ba1c;
 }
 
@@ -19,18 +20,21 @@
   --shadow-rgb: 0, 0, 0;
   --text-color-main: #dddddd;
   --text-color-sub: #9b9b9b;
+  --hover: #333333;
   --oil: #fee552;
 }
 
-// common theme styles
+// ===== common theme styles =====
 .theme-light,
 .theme-dark {
+  // card
   .n-card {
     color: var(--text-color-main);
     background-color: var(--bg-second);
-    border-color: var(--border);
+    border: 0;
   }
 
+  // dropdown
   .n-dropdown-menu {
     background-color: var(--bg-second);
   }
@@ -38,9 +42,17 @@
   .n-dropdown-menu .n-dropdown-option .n-dropdown-option-body {
     color: var(--text-color-main) !important;
   }
+
+  .n-dropdown-menu
+    .n-dropdown-option
+    .n-dropdown-option-body:not(
+      .n-dropdown-option-body--disabled
+    ).n-dropdown-option-body--pending::before {
+    background-color: var(--hover);
+  }
 }
 
-// light theme styles
+// ===== light theme styles =====
 .theme-light {
   .shadow {
     box-shadow:
@@ -52,7 +64,7 @@
   }
 }
 
-// dark theme styles
+// ===== dark theme styles =====
 .theme-dark {
   .shadow {
     box-shadow:
@@ -77,4 +89,8 @@ body {
   color: var(--text-color-main) !important;
   font-size: 16px;
   background-color: var(--bg-main);
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    box-shadow 0.5s ease;
 }

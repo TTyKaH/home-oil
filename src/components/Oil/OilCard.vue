@@ -35,7 +35,7 @@ import UseOilList from '@/composables/UseOilList.ts'
 
 defineProps({
   oil: {
-    type: Object,
+    type: [Object, null],
     required: true,
   },
 })

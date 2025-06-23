@@ -24,6 +24,7 @@
       Домашнее масло
     </div>
 
+    <!-- TODO: сделать стиль для активного роута -->
     <NDropdown
       class="header__menu"
       trigger="click"

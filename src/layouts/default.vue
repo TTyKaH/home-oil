@@ -2,7 +2,9 @@
   <div class="default">
     <Header />
     <div class="default__view">
-      <RouterView />
+      <transition name="fade" mode="out-in">
+        <RouterView />
+      </transition>
     </div>
   </div>
 </template>
