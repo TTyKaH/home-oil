@@ -2,9 +2,11 @@
   <div class="default">
     <Header />
     <div class="default__view">
-      <transition name="fade" mode="out-in">
-        <RouterView />
-      </transition>
+      <RouterView v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </RouterView>
     </div>
   </div>
 </template>
