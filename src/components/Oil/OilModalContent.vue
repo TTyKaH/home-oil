@@ -2,7 +2,7 @@
   <div class="oil-modal-content">
     <div class="custom-modal__header oil-modal-content__header">
       <n-avatar round :size="34" :src="`/src/assets/img/oils/${oilBuffer?.img}.jpg`" />
-      {{ oilBuffer.modalContent.title }}
+      {{ oilBuffer?.modalContent.title }}
     </div>
     <div class="custom-modal__body oil-modal-content__body">
       <div class="oil-modal-content__description">
@@ -10,7 +10,7 @@
           <NIcon color="var(--text-color-sub)" size="28" :component="DescriptionOutlined" />
           Описание
         </div>
-        {{ oilBuffer.modalContent.description }}
+        {{ oilBuffer?.modalContent.description }}
       </div>
 
       <div class="oil-modal-content__description">
@@ -20,7 +20,7 @@
         </div>
         <div class="oil-modal-content__list grid gap-2">
           <div
-            v-for="(property, idx) in oilBuffer.modalContent.properties"
+            v-for="(property, idx) in oilBuffer?.modalContent.properties"
             :key="idx"
             class="oil-modal-content__item flex gap-1"
           >
@@ -40,7 +40,7 @@
           </div>
           <div class="oil-modal-content__list grid gap-2">
             <div
-              v-for="(contraindication, idx) in oilBuffer.modalContent.contraindications"
+              v-for="(contraindication, idx) in oilBuffer?.modalContent.contraindications"
               :key="idx"
               class="oil-modal-content__item flex gap-1"
             >
@@ -62,19 +62,16 @@
 
 <script setup lang="ts">
 import { DescriptionOutlined, ThumbUpOutlined, WarningAmberOutlined } from '@vicons/material'
-import { ref, watch } from 'vue'
+import { type Ref, ref, watch } from 'vue'
 
 import ContactsList from '@/components/ContactsList.vue'
+import type { IOil } from '@/types/index'
 
-const props = defineProps({
-  oil: {
-    type: Object,
-    required: true,
-    default: null,
-  },
-})
+const props = defineProps<{
+  oil: IOil | null
+}>()
 
-const oilBuffer = ref(null)
+const oilBuffer: Ref<IOil | null> = ref(null)
 
 watch(
   () => props.oil,

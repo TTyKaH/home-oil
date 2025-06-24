@@ -13,13 +13,11 @@
 <script setup lang="ts">
 import ContactsList from '@/components/ContactsList.vue'
 import OilCard from '@/components/Oil/OilCard.vue'
+import type { IOil } from '@/types/index'
 
-defineProps({
-  list: {
-    type: Array,
-    required: true,
-  },
-})
+defineProps<{
+  list: IOil[]
+}>()
 </script>
 
 <style scoped lang="scss">

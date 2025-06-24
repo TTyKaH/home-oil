@@ -8,6 +8,7 @@
   --text-color-main: #4a4a4a;
   --text-color-sub: #a0aec0;
   --hover: #f3f3f5;
+  --hover-active: #f8f8f8;
   --oil: #f7ba1c;
 }
 
@@ -21,6 +22,7 @@
   --text-color-main: #dddddd;
   --text-color-sub: #9b9b9b;
   --hover: #333333;
+  --hover-active: #2e2e2e;
   --oil: #fee552;
 }
 
@@ -49,6 +51,14 @@
       .n-dropdown-option-body--disabled
     ).n-dropdown-option-body--pending::before {
     background-color: var(--hover);
+  }
+
+  .n-dropdown-menu
+    .n-dropdown-option
+    .n-dropdown-option-body:not(
+      .n-dropdown-option-body--disabled
+    ).n-dropdown-option-body--active::before {
+    background-color: var(--hover-active);
   }
 }
 

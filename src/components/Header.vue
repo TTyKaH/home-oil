@@ -24,12 +24,12 @@
       Домашнее масло
     </div>
 
-    <!-- TODO: сделать стиль для активного роута -->
     <NDropdown
       class="header__menu"
       trigger="click"
       :options="menu"
       size="huge"
+      :value="routeName"
       @select="handleSelect"
     >
       <NButton quaternary circle>
@@ -43,7 +43,8 @@
 
 <script setup lang="ts">
 import { DarkModeFilled, DehazeFilled, LightModeFilled, WaterDropFilled } from '@vicons/material'
-import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 import UseTheme from '@/composables/UseTheme'
 
@@ -61,9 +62,13 @@ const menu = [
 ]
 
 const router = useRouter()
+const route = useRoute()
 
-const handleSelect = (routeName: string) => {
-  router.push({ name: routeName })
+const routeName = ref(route.name)
+
+const handleSelect = (newRouteName: string) => {
+  router.push({ name: newRouteName })
+  routeName.value = newRouteName
 }
 </script>
 

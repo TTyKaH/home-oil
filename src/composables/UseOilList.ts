@@ -1,6 +1,8 @@
-import { ref } from 'vue'
+import { type Ref, ref } from 'vue'
 
-const oilList = [
+import type { IOil } from '@/types/index'
+
+const oilList: IOil[] = [
   {
     name: 'Подсолнечное',
     type: 'Холодный/Горячий отжим',
@@ -228,10 +230,10 @@ const oilList = [
   },
 ]
 
-const activeOil = ref(null)
+const activeOil: Ref<IOil | null> = ref(null)
 
 const UseOilList = () => {
-  const setActiveOil = (oil) => (activeOil.value = oil)
+  const setActiveOil = (oil: IOil) => (activeOil.value = oil)
   const clearActiveOil = () => (activeOil.value = null)
 
   return {

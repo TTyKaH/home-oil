@@ -32,13 +32,11 @@
 import { VisibilityOutlined } from '@vicons/material'
 
 import UseOilList from '@/composables/UseOilList.ts'
+import type { IOil } from '@/types/index'
 
-defineProps({
-  oil: {
-    type: [Object, null],
-    required: true,
-  },
-})
+defineProps<{
+  oil: IOil
+}>()
 
 const { setActiveOil } = UseOilList()
 </script>
