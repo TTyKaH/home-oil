@@ -1,5 +1,10 @@
 <template>
-  <NModal class="custom-modal" :show="isShow" @mask-click="close">
+  <NModal
+    class="custom-modal"
+    :show="isShow"
+    :style="{ maxWidth: '900px', margin: '10px auto' }"
+    @mask-click="close"
+  >
     <NCard class="custom-modal__card" :bordered="false" size="huge" role="dialog" aria-modal="true">
       <template #cover>
         <div class="custom-modal__content shadow">

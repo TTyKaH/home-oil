@@ -1,5 +1,6 @@
 .wrap-x {
-  @apply px-5;
+  @apply px-5 m-auto;
+  max-width: 1024px;
 }
 
 .wrap-b {
