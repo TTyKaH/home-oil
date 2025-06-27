@@ -64,13 +64,13 @@ const close = () => emit('close')
   &__header {
     font-weight: 700;
     font-size: 24px;
-    padding: 15px 20px;
+    padding: 30px 20px 15px;
   }
 
   :deep(.custom-modal__header) {
     font-weight: 700;
     font-size: 24px;
-    padding: 15px 20px;
+    padding: 30px 20px 15px;
   }
 
   &__body {

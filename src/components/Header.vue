@@ -1,43 +1,45 @@
 <template>
-  <div class="header wrap-x">
-    <NButton class="header__theme" quaternary circle>
-      <template #icon>
-        <NIcon
-          v-if="themeName === 'light'"
-          size="28"
-          :component="LightModeFilled"
-          color="var(--text-color-main)"
-          @click="setTheme('dark')"
-        />
-        <NIcon
-          v-else
-          size="28"
-          :component="DarkModeFilled"
-          color="var(--text-color-main)"
-          @click="setTheme('light')"
-        />
-      </template>
-    </NButton>
-
-    <div class="header__logo">
-      <NIcon size="18" color="var(--oil)" :component="WaterDropFilled" />
-      Домашнее масло
-    </div>
-
-    <NDropdown
-      class="header__menu"
-      trigger="click"
-      :options="menu"
-      size="huge"
-      :value="routeName"
-      @select="handleSelect"
-    >
-      <NButton quaternary circle>
+  <div class="header">
+    <div class="header__wrap wrap-x">
+      <NButton class="header__theme" quaternary circle>
         <template #icon>
-          <NIcon size="28" :component="DehazeFilled" color="var(--text-color-main)" />
+          <NIcon
+            v-if="themeName === 'light'"
+            size="28"
+            :component="LightModeFilled"
+            color="var(--text-color-main)"
+            @click="setTheme('dark')"
+          />
+          <NIcon
+            v-else
+            size="28"
+            :component="DarkModeFilled"
+            color="var(--text-color-main)"
+            @click="setTheme('light')"
+          />
         </template>
       </NButton>
-    </NDropdown>
+
+      <div class="header__logo">
+        <NIcon size="18" color="var(--oil)" :component="WaterDropFilled" />
+        Домашнее масло
+      </div>
+
+      <NDropdown
+        class="header__menu"
+        trigger="click"
+        :options="menu"
+        size="huge"
+        :value="routeName"
+        @select="handleSelect"
+      >
+        <NButton quaternary circle>
+          <template #icon>
+            <NIcon size="28" :component="DehazeFilled" color="var(--text-color-main)" />
+          </template>
+        </NButton>
+      </NDropdown>
+    </div>
   </div>
 </template>
 
@@ -74,10 +76,8 @@ const handleSelect = (newRouteName: string) => {
 
 <style scoped lang="scss">
 .header {
-  @apply flex items-center justify-between fixed z-50;
+  @apply fixed z-50;
 
-  padding-top: 12px;
-  padding-bottom: 12px;
   top: 0;
   left: 0;
   right: 0;
@@ -99,6 +99,13 @@ const handleSelect = (newRouteName: string) => {
   //   0px 12px 40px rgba(3, 7, 18, 0.01),
   //   0px 20px 70px rgba(3, 7, 18, 0.01),
   //   0px 32px 110px rgba(3, 7, 18, 0.01);
+
+  &__wrap {
+    @apply flex items-center justify-between;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 
   &__logo {
     @apply flex items-center;

@@ -1,5 +1,5 @@
 <template>
-  <div class="contacts gap-3">
+  <div class="contacts gap-3" :class="{ 'md:justify-items-center': isCanCenteringOnTabletAndPC }">
     <a
       v-for="(contact, idx) in contacts"
       :key="idx"
@@ -20,6 +20,15 @@
 <script setup lang="ts">
 import { ChatOutlined, GroupsOutlined, PhoneInTalkOutlined } from '@vicons/material'
 
+withDefaults(
+  defineProps<{
+    isCanCenteringOnTabletAndPC?: boolean
+  }>(),
+  {
+    isCanCenteringOnTabletAndPC: false,
+  },
+)
+
 const contacts = [
   {
     title: '+7 (918) 245-83-86',
@@ -39,7 +48,7 @@ const contacts = [
 ]
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .contacts {
   @apply grid;
 }

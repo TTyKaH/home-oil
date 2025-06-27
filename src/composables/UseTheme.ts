@@ -1,6 +1,6 @@
 import { onMounted, type Ref, ref, watch } from 'vue'
 
-const UseTheme = () => {
+export default function UseTheme() {
   const themeName: Ref<string> = ref('light')
 
   const updateThemeColor = (color: string) => {
@@ -17,14 +17,16 @@ const UseTheme = () => {
     () => themeName.value,
     () => {
       if (themeName.value === 'light') {
-        document.body.classList.add('theme-light')
-        document.body.classList.remove('theme-dark')
+        document.documentElement.classList.add('theme-light')
+        document.documentElement.classList.remove('theme-dark')
       } else {
-        document.body.classList.add('theme-dark')
-        document.body.classList.remove('theme-light')
+        document.documentElement.classList.add('theme-dark')
+        document.documentElement.classList.remove('theme-light')
       }
 
-      const computedBgMain = getComputedStyle(document.body).getPropertyValue('--bg-main')
+      const computedBgMain = getComputedStyle(document.documentElement).getPropertyValue(
+        '--bg-main',
+      )
       updateThemeColor(computedBgMain)
     },
     {
@@ -72,5 +74,3 @@ const UseTheme = () => {
     setTheme,
   }
 }
-
-export default UseTheme

@@ -4,10 +4,10 @@
       Давим масло под <br />
       индивидуальный заказ
     </div>
-    <div class="oil-list__cards gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div class="oil-list__cards gap-5 sm:grid-cols-2 lg:grid-cols-3">
       <OilCard v-for="(oil, idx) in list" :key="idx" :oil="oil" />
     </div>
-    <ContactsList class="pt-7 pb-3" />
+    <ContactsList class="pt-7 pb-3" isCanCenteringOnTabletAndPC />
   </div>
 </template>
 

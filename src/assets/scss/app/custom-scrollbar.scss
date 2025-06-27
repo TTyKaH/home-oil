@@ -1,0 +1,54 @@
+.custom-scrollbar {
+  /* 1. Общие настройки скроллбара */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* 2. Стили для трека скроллбара (дорожки, по которой движется ползунок) */
+  ::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+  }
+
+  /* 3. Стили для ползунка скроллбара (подвижной части, которую тянет пользователь) */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+  }
+
+  /* 4. Стили при наведении курсора на ползунок */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* 5. Стили для углового элемента скроллбара (если есть и вертикальный, и горизонтальный скроллбары) */
+  ::-webkit-scrollbar-corner {
+    background: #f9f9f9;
+  }
+
+  &.theme-dark {
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--hover-active);
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--text-color-sub);
+      border-radius: 10px;
+      border: 3px solid var(--hover-active);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-color-main);
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: var(--bg-second);
+    }
+  }
+}
