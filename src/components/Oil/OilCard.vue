@@ -1,12 +1,7 @@
 <template>
   <NCard class="oil-card shadow">
     <template #cover>
-      <div
-        class="oil-card__img"
-        :style="{
-          backgroundImage: `url('/src/assets/img/oils/${oil.img}.jpg')`,
-        }"
-      />
+      <div class="oil-card__img" :style="backgroundImageStyle" />
 
       <div class="oil-card__content">
         <div class="oil-card__description">
@@ -30,15 +25,23 @@
 
 <script setup lang="ts">
 import { VisibilityOutlined } from '@vicons/material'
+import { computed } from 'vue'
 
 import UseOilList from '@/composables/UseOilList.ts'
 import type { IOil } from '@/types/index'
 
-defineProps<{
+const props = defineProps<{
   oil: IOil
 }>()
 
 const { setActiveOil } = UseOilList()
+
+const backgroundImageStyle = computed(() => {
+  const imageUrl = new URL(`/src/assets/img/oils/${props.oil.img}.jpg`, import.meta.url).href
+  return {
+    backgroundImage: `url('${imageUrl}')`,
+  }
+})
 </script>
 
 <style scoped lang="scss">

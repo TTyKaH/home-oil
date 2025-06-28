@@ -1,7 +1,7 @@
 <template>
   <div class="oil-modal-content">
     <div class="custom-modal__header oil-modal-content__header">
-      <n-avatar round :size="34" :src="`/src/assets/img/oils/${oilBuffer?.img}.jpg`" />
+      <n-avatar round :size="34" :src="avatarImageUrl" />
       {{ oilBuffer?.modalContent.title }}
     </div>
     <div class="custom-modal__body oil-modal-content__body">
@@ -62,7 +62,7 @@
 
 <script setup lang="ts">
 import { DescriptionOutlined, ThumbUpOutlined, WarningAmberOutlined } from '@vicons/material'
-import { type Ref, ref, watch } from 'vue'
+import { computed, type Ref, ref, watch } from 'vue'
 
 import ContactsList from '@/components/ContactsList.vue'
 import type { IOil } from '@/types/index'
@@ -82,6 +82,13 @@ watch(
   },
   { deep: true, immediate: true },
 )
+
+const avatarImageUrl = computed(() => {
+  if (oilBuffer.value?.img) {
+    return new URL(`/src/assets/img/oils/${oilBuffer.value.img}.jpg`, import.meta.url).href
+  }
+  return ''
+})
 </script>
 
 <style scoped lang="scss">
