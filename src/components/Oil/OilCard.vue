@@ -36,8 +36,9 @@ const props = defineProps<{
 
 const { setActiveOil } = UseOilList()
 
+// TODO: смотреть на устройство - если пк, то отдавать качественное изображение
 const backgroundImageStyle = computed(() => {
-  const imageUrl = new URL(`/src/assets/img/oils/${props.oil.img}.jpg`, import.meta.url).href
+  const imageUrl = new URL(`/src/assets/img/oils/lq/${props.oil.img}.jpg`, import.meta.url).href
   return {
     backgroundImage: `url('${imageUrl}')`,
   }

@@ -85,7 +85,7 @@ watch(
 
 const avatarImageUrl = computed(() => {
   if (oilBuffer.value?.img) {
-    return new URL(`/src/assets/img/oils/${oilBuffer.value.img}.jpg`, import.meta.url).href
+    return new URL(`/src/assets/img/oils/lq/${oilBuffer.value.img}.jpg`, import.meta.url).href
   }
   return ''
 })
