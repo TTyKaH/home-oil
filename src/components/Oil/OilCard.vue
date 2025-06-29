@@ -1,7 +1,8 @@
 <template>
   <NCard class="oil-card shadow">
     <template #cover>
-      <div class="oil-card__img" :style="backgroundImageStyle" />
+      <NSkeleton v-if="isLoadingImg" class="oil-card__skeleton" sharp animated height="450px" />
+      <div v-else class="oil-card__img" :style="backgroundImageStyle" />
 
       <div class="oil-card__content">
         <div class="oil-card__description">
@@ -25,7 +26,7 @@
 
 <script setup lang="ts">
 import { VisibilityOutlined } from '@vicons/material'
-import { computed } from 'vue'
+import { computed, ref, watchEffect } from 'vue'
 
 import UseOilList from '@/composables/UseOilList.ts'
 import type { IOil } from '@/types/index'
@@ -36,11 +37,26 @@ const props = defineProps<{
 
 const { setActiveOil } = UseOilList()
 
-// TODO: смотреть на устройство - если пк, то отдавать качественное изображение
+const isLoadingImg = ref(true)
+
+const imageUrl = computed(() => {
+  return new URL(`/src/assets/img/oils/lq/${props.oil.img}.jpg`, import.meta.url).href
+})
+
 const backgroundImageStyle = computed(() => {
-  const imageUrl = new URL(`/src/assets/img/oils/lq/${props.oil.img}.jpg`, import.meta.url).href
   return {
-    backgroundImage: `url('${imageUrl}')`,
+    backgroundImage: `url('${imageUrl.value}')`,
+  }
+})
+
+watchEffect(() => {
+  const img = new Image()
+  img.src = imageUrl.value
+  img.onload = () => {
+    isLoadingImg.value = false
+  }
+  img.onerror = () => {
+    isLoadingImg.value = false
   }
 })
 </script>
@@ -49,9 +65,13 @@ const backgroundImageStyle = computed(() => {
 .oil-card {
   border-radius: 20px;
 
+  &__skeleton {
+    border-radius: 20px 20px 0 0;
+  }
+
   &__img {
     @apply w-full bg-cover;
-    border-radius: 15px 15px 0 0;
+    border-radius: 20px 20px 0 0;
     height: 450px;
     background-repeat: no-repeat;
     background-position: center top;
