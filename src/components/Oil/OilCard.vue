@@ -5,27 +5,31 @@
       <div v-else class="oil-card__img" :style="backgroundImageStyle" />
 
       <div class="oil-card__content">
-        <div class="oil-card__description">
-          <div class="oil-card__name">
-            {{ oil.name }}
+        <div class="oil-card__description w-full">
+          <div class="flex justify-between items-center">
+            <div class="oil-card__name">
+              {{ oil.name }}
+            </div>
+            <NButton class="oil-card__open" quaternary circle @click="setActiveOil(oil)">
+              <template #icon>
+                <NIcon color="var(--text-color-sub)" size="28" :component="TouchAppOutlined" />
+              </template>
+            </NButton>
           </div>
-          <div class="oil-card__type">
-            {{ oil.type }}
+          <div class="flex gap-3 justify-between">
+            <div class="oil-card__type">
+              {{ oil.type }}
+            </div>
+            <div class="oil-card__price">{{ oil.price.sum }} ₽ / {{ oil.price.volume }} л</div>
           </div>
         </div>
-
-        <NButton class="oil-card__open" quaternary circle @click="setActiveOil(oil)">
-          <template #icon>
-            <NIcon color="var(--text-color-sub)" size="28" :component="VisibilityOutlined" />
-          </template>
-        </NButton>
       </div>
     </template>
   </NCard>
 </template>
 
 <script setup lang="ts">
-import { VisibilityOutlined } from '@vicons/material'
+import { TouchAppOutlined } from '@vicons/material'
 import { computed, ref, watchEffect } from 'vue'
 
 import UseOilList from '@/composables/UseOilList.ts'
@@ -95,7 +99,8 @@ watchEffect(() => {
     color: var(--text-color-main);
   }
 
-  &__type {
+  &__type,
+  &__price {
     font-weight: 600;
     font-size: 16px;
     color: var(--text-color-sub);

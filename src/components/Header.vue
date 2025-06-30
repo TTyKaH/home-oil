@@ -58,6 +58,14 @@ const menu = [
     key: 'oil-list',
   },
   {
+    label: 'Цены',
+    key: 'prices',
+  },
+  {
+    label: 'Доставка',
+    key: 'delivery',
+  },
+  {
     label: 'Контактные данные',
     key: 'contacts',
   },
@@ -92,13 +100,6 @@ const handleSelect = (newRouteName: string) => {
     rgba(var(--bg-main-rgb), 1)
   );
   backdrop-filter: blur(7px);
-
-  // box-shadow:
-  //   0px 1px 4px rgba(3, 7, 18, 0),
-  //   0px 5px 18px rgba(3, 7, 18, 0),
-  //   0px 12px 40px rgba(3, 7, 18, 0.01),
-  //   0px 20px 70px rgba(3, 7, 18, 0.01),
-  //   0px 32px 110px rgba(3, 7, 18, 0.01);
 
   &__wrap {
     @apply flex items-center justify-between;

@@ -1,8 +1,8 @@
 import { onMounted, type Ref, ref, watch } from 'vue'
 
-export default function UseTheme() {
-  const themeName: Ref<string> = ref('light')
+const themeName: Ref<string> = ref('light')
 
+export default function UseTheme() {
   const updateThemeColor = (color: string) => {
     let themeColorMeta = document.querySelector('meta[name="theme-color"]')
     if (!themeColorMeta) {

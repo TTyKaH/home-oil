@@ -7,6 +7,10 @@ const oilList: IOil[] = [
     name: 'Подсолнечное',
     type: 'Холодный/Горячий отжим',
     img: 'oil-sunflower',
+    price: {
+      sum: 250,
+      volume: '0.5',
+    },
     modalContent: {
       title: 'Масло подсолнечное',
       description: `
@@ -34,6 +38,10 @@ const oilList: IOil[] = [
     name: 'Черный тмин',
     type: 'Холодный отжим',
     img: 'oil-black-cumin',
+    price: {
+      sum: 1300,
+      volume: '0.25',
+    },
     modalContent: {
       title: 'Масло черного тмина',
       description: `
@@ -61,6 +69,10 @@ const oilList: IOil[] = [
     name: 'Тыквенное',
     type: 'Холодный отжим',
     img: 'oil-pumpkin',
+    price: {
+      sum: 1300,
+      volume: '0.5',
+    },
     modalContent: {
       title: 'Масло тыквенное',
       description: `
@@ -86,6 +98,10 @@ const oilList: IOil[] = [
     name: 'Льняное',
     type: 'Холодный отжим',
     img: 'oil-flax',
+    price: {
+      sum: 400,
+      volume: '0.5',
+    },
     modalContent: {
       title: 'Масло льняное',
       description: `
@@ -112,6 +128,10 @@ const oilList: IOil[] = [
     name: 'Горчичное',
     type: 'Холодный отжим',
     img: 'oil-mustard',
+    price: {
+      sum: 400,
+      volume: '0.5',
+    },
     modalContent: {
       title: 'Масло горчичное',
       description: `
@@ -137,6 +157,10 @@ const oilList: IOil[] = [
     name: 'Абрикосовое',
     type: 'Холодный отжим',
     img: 'oil-apricot',
+    price: {
+      sum: 1300,
+      volume: '0.5',
+    },
     modalContent: {
       title: 'Масло абрикосовое',
       description: `
@@ -161,6 +185,10 @@ const oilList: IOil[] = [
     name: 'Маковое',
     type: 'Холодный отжим',
     img: 'oil-poppy',
+    price: {
+      sum: 1500,
+      volume: '0.5',
+    },
     modalContent: {
       title: 'Масло маковое',
       description: `
@@ -181,32 +209,13 @@ const oilList: IOil[] = [
     },
   },
   {
-    name: 'Черная горчица',
-    type: 'Холодный отжим',
-    img: 'oil-black-mustard',
-    modalContent: {
-      title: 'Масло черной горчицы',
-      description: `
-        Масло черной горчицы обладает выраженными разогревающими и антисептическими свойствами.
-        Применяется как в кулинарии, так и в народной медицине.
-      `,
-      properties: [
-        'Улучшает кровообращение и обмен веществ',
-        'Обладает согревающим эффектом при растираниях',
-        'Содержит витамины E, K, фитонциды и эфирные масла',
-        'Применяется при простудных заболеваниях и болях в мышцах',
-      ],
-      contraindications: [
-        'Индивидуальная непереносимость',
-        'Не применять на чувствительных участках кожи',
-        'Не рекомендуется беременным и кормящим, а так же детям без консультации врача',
-      ],
-    },
-  },
-  {
     name: 'Грецкий орех',
     type: 'Холодный отжим',
     img: 'oil-walnut',
+    price: {
+      sum: 1500,
+      volume: '0.5',
+    },
     modalContent: {
       title: 'Масло грецкого ореха',
       description: `

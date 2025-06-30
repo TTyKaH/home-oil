@@ -4,7 +4,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import DefaultLayout from '@/layouts/default.vue'
 // views
 import Contacts from '@/views/contacts.vue'
+import Delivery from '@/views/delivery.vue'
 import OilList from '@/views/index.vue'
+import Prices from '@/views/prices.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +24,16 @@ const router = createRouter({
           path: '/contacts',
           name: 'contacts',
           component: Contacts,
+        },
+        {
+          path: '/delivery',
+          name: 'delivery',
+          component: Delivery,
+        },
+        {
+          path: '/prices',
+          name: 'prices',
+          component: Prices,
         },
       ],
     },
