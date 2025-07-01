@@ -44,7 +44,7 @@ const { setActiveOil } = UseOilList()
 const isLoadingImg = ref(true)
 
 const imageUrl = computed(() => {
-  return new URL(`/src/assets/img/oils/lq/${props.oil.img}.jpg`, import.meta.url).href
+  return new URL(`/src/assets/img/oils/${props.oil.img}.jpg`, import.meta.url).href
 })
 
 const backgroundImageStyle = computed(() => {

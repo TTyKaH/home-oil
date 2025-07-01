@@ -45,5 +45,7 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => {
 // TODO: у хежера есть скачки, Так как он фиксирован и скачет из-за скрола
 
 // сделать превью изображние
+
+// на айфоне в модалке обводится номер
 @use '@/assets/scss/main.scss';
 </style>
