@@ -10,7 +10,7 @@
         width="34px"
         height="34px"
       />
-      <n-avatar v-else round :size="34" :src="avatarImageUrl" />
+      <n-avatar v-else round :size="34" :src="avatarImageUrl" class="oil-modal-content__avatar" />
       {{ oilBuffer?.modalContent.title }}
     </div>
     <div class="custom-modal__body oil-modal-content__body">
@@ -123,6 +123,10 @@ watchEffect(() => {
   &__body {
     @apply grid;
     gap: 24px;
+  }
+
+  &__avatar {
+    min-width: 34px;
   }
 
   &__title {

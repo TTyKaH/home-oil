@@ -6,7 +6,7 @@
 
       <div class="oil-card__content">
         <div class="oil-card__description w-full">
-          <div class="flex justify-between items-center">
+          <div class="flex justify-between items-center pb-0.5">
             <div class="oil-card__name">
               {{ oil.name }}
             </div>
@@ -95,14 +95,14 @@ watchEffect(() => {
 
   &__name {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 22px;
     color: var(--text-color-main);
   }
 
   &__type,
   &__price {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     color: var(--text-color-sub);
   }
 }

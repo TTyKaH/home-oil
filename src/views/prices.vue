@@ -6,8 +6,8 @@
       <NTable striped>
         <thead>
           <tr>
-            <th v-for="(head, idx) in heads" :key="idx">
-              {{ head }}
+            <th v-for="(head, idx) in heads" :key="idx" :style="{ width: head.width }">
+              {{ head.title }}
             </th>
           </tr>
         </thead>
@@ -26,7 +26,24 @@
 
 <script setup lang="ts">
 import UseOilList from '@/composables/UseOilList.ts'
-const heads = ['№', 'Название', 'Объем (л)', 'Цена (₽)']
+const heads = [
+  {
+    title: '№',
+    width: '80px',
+  },
+  {
+    title: 'Название',
+    width: '1000px',
+  },
+  {
+    title: 'Объем (л)',
+    width: '150px',
+  },
+  {
+    title: 'Цена (₽)',
+    width: '150px',
+  },
+]
 
 const { oilList } = UseOilList()
 </script>
