@@ -10,11 +10,14 @@
             <div class="oil-card__name">
               {{ oil.name }}
             </div>
-            <NButton class="oil-card__open" quaternary circle @click="setActiveOil(oil)">
-              <template #icon>
-                <NIcon color="var(--text-color-sub)" size="28" :component="TouchAppOutlined" />
-              </template>
-            </NButton>
+            <div class="oil-card__open" @click="setActiveOil(oil)">
+              подробнее
+              <NButton quaternary circle>
+                <template #icon>
+                  <NIcon color="var(--text-color-sub)" size="28" :component="TouchAppOutlined" />
+                </template>
+              </NButton>
+            </div>
           </div>
           <div class="flex gap-3 justify-between">
             <div class="oil-card__type">
@@ -97,6 +100,13 @@ watchEffect(() => {
     font-weight: 700;
     font-size: 22px;
     color: var(--text-color-main);
+  }
+
+  &__open {
+    @apply flex items-center;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-color-sub);
   }
 
   &__type,

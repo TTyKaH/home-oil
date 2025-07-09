@@ -18,7 +18,7 @@ import Header from '@/components/Header.vue'
 <style scoped lang="scss">
 .default {
   &__view {
-    padding-top: calc(58px + 20px);
+    padding-top: calc(83px + 20px);
   }
 }
 </style>
